@@ -1,0 +1,80 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+     width: 100%;
+     display: block;
+     font-size: 62.5%;
+}
+body {
+
+     background: #5BCFF4;
+     
+}
+header {
+
+     text-align: center;
+     /* background: white; */
+     margin-top: 0;
+     align-items: center;
+     font-size: 3rem;
+     text-align: center;
+}
+
+main {
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     margin-top: 40px;
+     
+}
+div {
+     width: 100%;
+     padding-left: 30%;
+     display: flex;
+     text-align: center;
+     font-size: 5rem;
+}
+.checkboxes {
+
+     width: 50px;
+     height: 50px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+a {
+     font-weight: 900;
+     font-size: large;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
