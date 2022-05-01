@@ -1,6 +1,6 @@
 function assignClickEvent() {
   for (let i = 1; i <= 36; i++) {
-    let divId = document.getElementById(`checkbox${i}`)
+    let divId = document.getElementById(`gyroidNum${i}`)
     divId.addEventListener('click', saveToLocal)
   }
 }
@@ -21,8 +21,8 @@ function saveToLocal() {
 function checkLocalStorage() {
   console.log(localStorage)
   for(let i = 1; i <= 36; i++) {
-    if ( localStorage.getItem(`checkbox${i}`) == 'true' ) {
-      document.getElementById(`checkbox${i}`).checked = true
+    if ( localStorage.getItem(`gyroidNum${i}`) == 'true' ) {
+      document.getElementById(`gyroidNum${i}`).checked = true
     }
   }
 }
