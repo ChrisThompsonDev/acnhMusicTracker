@@ -3,7 +3,8 @@
 
 ///////////// GET LIST OF SONGS FROM API AND LOAD INTO DOM /////////////
 /////////////         ADD CHECKBOX TO EACH SONG            /////////////
-const currentMain = document.querySelector('main');
+const currentMain = document.querySelector('#main1');
+const updateMain = document.querySelector('#main2');
 
 function addDiv(songNum, songTitle, imgUrl) {
     // Create Div
@@ -52,7 +53,7 @@ function addMoreCheckboxes(songNum, songTitle, imgUrl) {
   //add class to checkbox
   newCheckbox.classList.add('checkboxes')
   // Add id to checkbox
-  newCheckbox.id = `${songTitle}`
+  newCheckbox.id = `checkbox${songNum}`
   //add name to checkbox
   newCheckbox.name = `${songTitle}`
   // Create label element
@@ -64,9 +65,10 @@ function addMoreCheckboxes(songNum, songTitle, imgUrl) {
   // add element to DOM
   newDiv.appendChild(newCheckbox)
   newDiv.appendChild(newLabel)
-  currentMain.appendChild(newDiv);
+  updateMain.appendChild(newDiv);
   //add query selector to each
-  //document.querySelector(`${songTitle}`).addEventListener('click', saveToLocal)
+  document.querySelector(`#checkbox${songNum}`).addEventListener('click', saveToLocal)
+  
 }
 
 
