@@ -1,208 +1,28 @@
-<div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
+![Screenshot](/images/screenshot2.PNG)
 
 
+# My Awesome Project
+My partner and I love to play Animal Crossing together every morning. Recently we decided to collect all of the songs in the game, only to find that there are over 100! We got tired of running to the house everyday to check our stereos so I made this app to help us keep track of what we have!
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] -->
+![Link to project](https://acnhmusictracker.netlify.app/)
 
+## How It's Made:
 
+**Tech used:** HTML, CSS, JavaScript, ACNH API
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/ChrisThompsonDev/acnhMusicTracker">
-    
-  </a>
+I started by using the Animal Crossing API to create new DOM elements with checkboxes. When checked, the data is kept in local storage. The songs from the newest update were no tin the API, so I created a separate function and manually copied the links from Nookipedia.
 
-  <h3 align="center">acnhMusicTracker</h3>
+## Optimizations
 
-  <p align="center">
-    
-    <br />
-    <a href="https://github.com/ChrisThompsonDev/acnhMusicTracker"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ChrisThompsonDev/acnhMusicTracker">View Demo</a>
-    ·
-    <a href="https://github.com/ChrisThompsonDev/acnhMusicTracker/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ChrisThompsonDev/acnhMusicTracker/issues">Request Feature</a>
-  </p>
-</div>
+I have not done anything to make this app pretty. It keeps it loading quickly as it is really only needed as a simple tool. I did update it to add spacing to the checkboxes as they were a bit close together and difficult to click on mobile.
 
+## Lessons Learned:
 
+This was a good refresher on using local storage and DOM manipulation. 
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 
+Also check out other projects of mine like this one! I used the same API for them.
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+![Animal Crossing Music Player](https://github.com/ChrisThompsonDev/Animal-Crossing-KK-Slider-Music-Player)
 
-[![acnhMusicTracker][product-screenshot]](https://i.imgur.com/Q4YPdOX.png)
-
-My partner and I have been collecting the K.K. Slider songs in Animal Crossing New Horizons. I recently found out that we were NOWHERE close to having them all. I decided to make an app that allowed us to keep track of the songs that we have so we didnt have to run back to the stereo everytime we needed to check if we had a song or not.
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-### Built With
-
-* Javascript
-* HTML
-* CSS
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-N/A
-
-### Prerequisites
-
-A browser and internet connection.
-
-### Installation
-
-Installation is not required. You can visit [https://acnhMusicTracker.netlify.app/](https://acnhMusicTracker.netlify.app/) to use the app.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Simply click on the checkboxes will save the data to your device.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Add Changelog
-- [ ] Add artwork
-- [ ] Multi-language Support
-
-
-See the [open issues](https://github.com/ChrisThompsonDev/acnhMusicTracker/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the ChrisThompsonDev License. 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@cThompsonDev](https://twitter.com/cThompsonDev) - ChrisThompsonDev@ProtonMail.com
-
-Project Link: [https://github.com/ChrisThompsonDev/acnhMusicTracker](https://github.com/ChrisThompsonDev/acnhMusicTracker)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Animal Crossing API](https://acnhapi.com/)
-* [Nookapedia](https://nookipedia.com/wiki/Main_Page)
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
