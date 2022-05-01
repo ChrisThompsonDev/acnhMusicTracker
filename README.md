@@ -4,7 +4,7 @@
 # My Awesome Project
 My partner and I love to play Animal Crossing together every morning. Recently we decided to collect all of the songs in the game, only to find that there are over 100! We got tired of running to the house everyday to check our stereos so I made this app to help us keep track of what we have!
 
-![Link to project](https://acnhmusictracker.netlify.app/)
+[Link to project](https://acnhmusictracker.netlify.app/)
 
 ## How It's Made:
 
@@ -24,5 +24,5 @@ This was a good refresher on using local storage and DOM manipulation.
 
 Also check out other projects of mine like this one! I used the same API for them.
 
-![Animal Crossing Music Player](https://github.com/ChrisThompsonDev/Animal-Crossing-KK-Slider-Music-Player)
+[Animal Crossing Music Player](https://github.com/ChrisThompsonDev/Animal-Crossing-KK-Slider-Music-Player)
 
