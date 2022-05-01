@@ -1,7 +1,7 @@
-![Screenshot](/images/screenshot2.PNG)
+![Screenshot](/images/screenshot3.PNG)
 
 
-# My Awesome Project
+# ACNH Music Collection Tracker
 My partner and I love to play Animal Crossing together every morning. Recently we decided to collect all of the songs in the game, only to find that there are over 100! We got tired of running to the house everyday to check our stereos so I made this app to help us keep track of what we have!
 
 [Link to project](https://acnhmusictracker.netlify.app/)
