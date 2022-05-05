@@ -11,65 +11,27 @@ function addDiv(artNum, artTitle, imgUrl) {
     const newDiv = document.createElement('div')
     // Add id to Div
     newDiv.id = `div${artNum}`
-    // Create checkbox
-    const newCheckbox = document.createElement('input');
-    //add type to checkbox
-    newCheckbox.type = 'checkbox'
-    // Add id to checkbox
-    newCheckbox.id = `artCheckbox${artNum}`
-    //add class to checkbox
-    newCheckbox.classList.add('checkboxes')
-    //add name to checkbox
-    newCheckbox.name = `${artTitle}`
+    // Create img
+    const newImg = document.createElement('img');
+    //add img source to img element
+    newImg.src = `${imgUrl}`
+    // Add id to image
+    newImg.id = `image${artNum}`
+    //add class to image
+    newImg.classList.add('images')
 
-    // Create label element
-    const newLabel = document.createElement('label')
-    // Add id to element
-    newLabel.for = `checkbox${artTitle}`
-    // Add Text to label
-    newLabel.innerText = `${artTitle}`
+    // Create h4 element
+    const newh4 = document.createElement('h4')
+    // Add Text to h4
+    newh4.innerText = `${artTitle}`
     // add element to DOM
-    newDiv.appendChild(newCheckbox)
-    newDiv.appendChild(newLabel)
-    currentMain.appendChild(newDiv);
-    
-    /* // Add img to div parent
     newDiv.appendChild(newImg)
-    newImg.src = `https://acnhapi.com/v1/images/songs/${num}`*/
+    newDiv.appendChild(newh4)
+    currentMain.appendChild(newDiv);
 
-    document.querySelector(`#artCheckbox${artNum}`).addEventListener('click', saveToLocal)
-
+    document.querySelector(`#div${artNum}`).addEventListener('click', saveToLocal)
 }
 
-//Create new Divs with the music from the 2.0 Update (Not in the API)
-
-/* function addMoreCheckboxes(songNum, songTitle, imgUrl) {
-  const newDiv = document.createElement('div');
-  newDiv.classList.add(`${songNum}`)
-  // Create checkbox
-  const newCheckbox = document.createElement('input');
-  //add type to checkbox
-  newCheckbox.type = 'checkbox'
-  //add class to checkbox
-  newCheckbox.classList.add('checkboxes')
-  // Add id to checkbox
-  newCheckbox.id = `checkbox${songNum}`
-  //add name to checkbox
-  newCheckbox.name = `${songTitle}`
-  // Create label element
-  const newLabel = document.createElement('label')
-  // Add id to element
-  newLabel.for = `checkbox${songTitle}`
-  // Add Text to label
-  newLabel.innerText = `${songTitle}`
-  // add element to DOM
-  newDiv.appendChild(newCheckbox)
-  newDiv.appendChild(newLabel)
-  updateMain.appendChild(newDiv);
-  //add query selector to each
-  document.querySelector(`#checkbox${songNum}`).addEventListener('click', saveToLocal)
-  
-} */
 
 
 let songs = {}
@@ -93,38 +55,49 @@ let songs = {}
   
   getFossils()
   
-///////////////////////////////////////////////////////////////////////////////
-/////////////// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK ///////////////
-///////////////////////////////////////////////////////////////////////////////                
 
-
-
-function saveToLocal() {
+/////////////// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK /
+/* function saveToLocal() {
 
   if (this.checked) {
     localStorage.setItem(`${this.id}`, true)
   } else {
     localStorage.removeItem(`${this.id}`)
   }
+} */
+
+function saveToLocal() {
+  if (this.style.background == 'green') {
+    localStorage.removeItem(`art${this.id}`)
+    this.style.background = ''
+    this.style.color = 'black'
+  } else {
+    localStorage.setItem(`art${this.id}`, true)
+    this.style.background = 'green'
+    this.style.color = 'white'
+  }
 }
 
 
 
-
-///////////////////////////////////////////////////////////////////////////////
-/////////////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD ////////////////
-/////////////////////////////////////////////////////////////////////////////// 
-
-
-
-
-function checkLocalStorage() {
+/////////////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD //
+/* function checkLocalStorage() {
   console.log(localStorage)
   for(let i = 0; i <= 107; i++) {
     if ( localStorage.getItem(`artCheckbox${i}`) == 'true' ) {
       document.getElementById(`artCheckbox${i}`).checked = true
     }
   }
+} */
+
+function checkLocalStorage() {
+  console.log(localStorage)
+  for(let i = 0; i <= 43; i++) {
+    if ( localStorage.getItem(`artdiv${i}`) == 'true' ) {
+      document.getElementById(`div${i}`).style.background = 'green'
+      document.getElementById(`div${i}`).style.color = 'white'
+    }
+  }
 }
 
-
+checkLocalStorage()

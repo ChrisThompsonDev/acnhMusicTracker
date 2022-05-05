@@ -11,64 +11,53 @@ function addDiv(songNum, songTitle, imgUrl) {
     const newDiv = document.createElement('div')
     // Add id to Div
     newDiv.id = `div${songNum}`
-    // Create checkbox
-    const newCheckbox = document.createElement('input');
-    //add type to checkbox
-    newCheckbox.type = 'checkbox'
-    // Add id to checkbox
-    newCheckbox.id = `checkbox${songNum}`
-    //add class to checkbox
-    newCheckbox.classList.add('checkboxes')
-    //add name to checkbox
-    newCheckbox.name = `${songTitle}`
+    // Create img
+    const newImg = document.createElement('img');
+    //add img source to img element
+    newImg.src = `${imgUrl}`
+    // Add id to image
+    newImg.id = `image${songNum}`
+    //add class to image
+    newImg.classList.add('images')
 
-    // Create label element
-    const newLabel = document.createElement('label')
-    // Add id to element
-    newLabel.for = `checkbox${songTitle}`
-    // Add Text to label
-    newLabel.innerText = `${songTitle}`
+    // Create h4 element
+    const newh4 = document.createElement('h4')
+    // Add Text to h4
+    newh4.innerText = `${songTitle}`
     // add element to DOM
-    newDiv.appendChild(newCheckbox)
-    newDiv.appendChild(newLabel)
-    currentMain.appendChild(newDiv);
-    
-    /* // Add img to div parent
     newDiv.appendChild(newImg)
-    newImg.src = `https://acnhapi.com/v1/images/songs/${num}`*/
+    newDiv.appendChild(newh4)
+    currentMain.appendChild(newDiv);
 
-    document.querySelector(`#checkbox${songNum}`).addEventListener('click', saveToLocal)
-
+    document.querySelector(`#div${songNum}`).addEventListener('click', saveToLocal)
 }
 
 //Create new Divs with the music from the 2.0 Update (Not in the API)
 
 function addMoreCheckboxes(songNum, songTitle, imgUrl) {
-  const newDiv = document.createElement('div');
-  newDiv.classList.add(`${songNum}`)
-  // Create checkbox
-  const newCheckbox = document.createElement('input');
-  //add type to checkbox
-  newCheckbox.type = 'checkbox'
-  //add class to checkbox
-  newCheckbox.classList.add('checkboxes')
-  // Add id to checkbox
-  newCheckbox.id = `checkbox${songNum}`
-  //add name to checkbox
-  newCheckbox.name = `${songTitle}`
-  // Create label element
-  const newLabel = document.createElement('label')
-  // Add id to element
-  newLabel.for = `checkbox${songTitle}`
-  // Add Text to label
-  newLabel.innerText = `${songTitle}`
-  // add element to DOM
-  newDiv.appendChild(newCheckbox)
-  newDiv.appendChild(newLabel)
-  updateMain.appendChild(newDiv);
-  //add query selector to each
-  document.querySelector(`#checkbox${songNum}`).addEventListener('click', saveToLocal)
-  
+    // Create Div
+    const newDiv = document.createElement('div')
+    // Add id to Div
+    newDiv.id = `div${songNum}`
+    // Create img
+    const newImg = document.createElement('img');
+    //add img source to img element
+    newImg.src = `${imgUrl}`
+    // Add id to checkbox
+    newImg.id = `image${songNum}`
+    //add class to checkbox
+    newImg.classList.add('images')
+
+    // Create h4 element
+    const newh4 = document.createElement('h4')
+    // Add Text to h4
+    newh4.innerText = `${songTitle}`
+    // add element to DOM
+    newDiv.appendChild(newImg)
+    newDiv.appendChild(newh4)
+    updateMain.appendChild(newDiv);
+
+    document.querySelector(`#div${songNum}`).addEventListener('click', saveToLocal)
 }
 
 
@@ -101,39 +90,44 @@ let songs = {}
     }
   
   getMusic()
-  
-///////////////////////////////////////////////////////////////////////////////
-/////////////// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK ///////////////
-///////////////////////////////////////////////////////////////////////////////                
 
 
+/// Write function to check local storage, and change previous names from "checkbox" to "Music". This can be removed once all users have logged on at least once after this update.
+function convertLocalNames() {
+  for(let i = 0; i <= 107; i++) {
+    if ( localStorage.getItem(`checkbox${i}`) == 'true' ) {
+      localStorage.setItem(`musicdiv${i}`, true)
+      localStorage.removeItem(`checkbox${i}`)
+    }
+  }
+}
+convertLocalNames()
+
+
+/// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK               
 
 function saveToLocal() {
-
-  if (this.checked) {
-    localStorage.setItem(`${this.id}`, true)
+  if (this.style.background == 'green') {
+    localStorage.removeItem(`music${this.id}`)
+    this.style.background = ''
+    this.style.color = 'black'
   } else {
-    localStorage.removeItem(`${this.id}`)
+    localStorage.setItem(`music${this.id}`, true)
+    this.style.background = 'green'
+    this.style.color = 'white'
   }
 }
 
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-/////////////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD ////////////////
-/////////////////////////////////////////////////////////////////////////////// 
-
-
-
+/////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD
 
 function checkLocalStorage() {
   console.log(localStorage)
   for(let i = 0; i <= 107; i++) {
-    if ( localStorage.getItem(`checkbox${i}`) == 'true' ) {
-      document.getElementById(`checkbox${i}`).checked = true
+    if ( localStorage.getItem(`musicdiv${i}`) == 'true' ) {
+      document.getElementById(`div${i}`).style.background = 'green'
+      document.getElementById(`div${i}`).style.color = 'white'
     }
   }
 }
 
-
+checkLocalStorage()
