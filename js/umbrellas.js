@@ -19,11 +19,11 @@ assignClickEvent()
 
 function saveToLocal() {
   if (this.style.background == 'green') {
-    localStorage.removeItem(`gyroid${this.id}`)
+    localStorage.removeItem(`umbrella${this.id}`)
     this.style.background = ''
     this.style.color = 'black'
   } else {
-    localStorage.setItem(`gyroid${this.id}`, true)
+    localStorage.setItem(`umbrella${this.id}`, true)
     this.style.background = 'green'
     this.style.color = 'white'
   }
@@ -42,7 +42,7 @@ function saveToLocal() {
 function checkLocalStorage() {
   console.log(localStorage)
   for(let i = 0; i <= 107; i++) {
-    if ( localStorage.getItem(`gyroiddiv${i}`) == 'true' ) {
+    if ( localStorage.getItem(`umbrelladiv${i}`) == 'true' ) {
       document.getElementById(`div${i}`).style.background = 'green'
       document.getElementById(`div${i}`).style.color = 'white'
     }

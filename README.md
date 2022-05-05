@@ -1,4 +1,4 @@
-![Screenshot](/images/screenshot4.PNG)
+![Screenshot](/images/screenshot5.PNG)
 
 
 # ACNH Music Collection Tracker
