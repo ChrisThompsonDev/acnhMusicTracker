@@ -1,5 +1,5 @@
 function assignClickEvent() {
-  for (let i = 1; i <= 36; i++) {
+  for (let i = 1; i <= 68; i++) {
     let divId = document.getElementById(`div${i}`)
     divId.addEventListener('click', saveToLocal)
   }
