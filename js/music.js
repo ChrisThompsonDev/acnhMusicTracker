@@ -107,14 +107,14 @@ convertLocalNames()
 /// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK               
 
 function saveToLocal() {
-  if (this.style.background == 'green') {
+  if (this.style.background !== '') {
     localStorage.removeItem(`music${this.id}`)
     this.style.background = ''
     this.style.color = 'black'
   } else {
     localStorage.setItem(`music${this.id}`, true)
-    this.style.background = 'green'
-    this.style.color = 'white'
+    this.style.background = '#8ee7b1'
+    this.style.color = '#025edb'
   }
 }
 
@@ -124,8 +124,8 @@ function checkLocalStorage() {
   console.log(localStorage)
   for(let i = 0; i <= 107; i++) {
     if ( localStorage.getItem(`musicdiv${i}`) == 'true' ) {
-      document.getElementById(`div${i}`).style.background = 'green'
-      document.getElementById(`div${i}`).style.color = 'white'
+      document.getElementById(`div${i}`).style.background = '#8ee7b1'
+      document.getElementById(`div${i}`).style.color = '#025edb'
     }
   }
 }
