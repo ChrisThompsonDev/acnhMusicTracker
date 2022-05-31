@@ -1,4 +1,4 @@
-![Screenshot](/images/acnhTrackingTools.gif)
+![Screenshot](/images/acnhTrackingTools2.gif)
 
 
 # ACNH Music Collection Tracker
@@ -16,13 +16,11 @@ I started by using the Animal Crossing API to create new DOM elements with check
 
 ## Optimizations
 
-I have not done anything to make this app pretty. It keeps it loading quickly as it is really only needed as a simple tool. I did update it to add spacing to the checkboxes as they were a bit close together and difficult to click on mobile.
-
-If people are actually using this, then I may beef it up a bit visually. I do plan to make the header image significatnly smaller so that it will load faster. Adding it was very impromptu and it is huge.
+I have added a lot of features to this over time. It started as simble text and checkboxes. It now has images, nicer formatting, background changes upon selection and a progress bar!
 
 ## Lessons Learned:
 
-This was a good refresher on using local storage and DOM manipulation. 
+This was a good refresher on using local storage and DOM manipulation. Every project is lesson learned in CSS!
 
 
 

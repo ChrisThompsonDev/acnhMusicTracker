@@ -1,22 +1,4 @@
-function assignClickEvent() {
-  for (let i = 1; i <= 68; i++) {
-    let divId = document.getElementById(`div${i}`)
-    divId.addEventListener('click', saveToLocal)
-  }
-}
-assignClickEvent()
-
-
-
-
-/* function saveToLocal() {
-  if (this.checked) {
-    localStorage.setItem(`${this.id}`, true)
-  } else {
-    localStorage.removeItem(`${this.id}`)
-  }
-} */
-
+/// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK    
 function saveToLocal() {
   if (this.style.background !== '') {
     localStorage.removeItem(`umbrella${this.id}`)
@@ -27,18 +9,10 @@ function saveToLocal() {
     this.style.background = '#8ee7b1'
     this.style.color = '#025edb'
   }
+  progressBar()
 }
 
-
-/* function checkLocalStorage() {
-  console.log(localStorage)
-  for(let i = 1; i <= 36; i++) {
-    if ( localStorage.getItem(`gyroidNum${i}`) == 'true' ) {
-      document.getElementById(`gyroidNum${i}`).checked = true
-    }
-  }
-} */
-
+/////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD
 function checkLocalStorage() {
   console.log(localStorage)
   for(let i = 0; i <= 107; i++) {
@@ -50,3 +24,30 @@ function checkLocalStorage() {
 }
 
 checkLocalStorage()
+
+/////// UPDATE PROGRESS BAR
+
+function progressBar() {
+  let bar = 0
+  for (let i = 0; i <= 68; i++) {
+    if ( localStorage.getItem(`umbrelladiv${i}`) == 'true' ) {
+      bar += 1
+    }
+  }
+  console.log(bar)
+  document.querySelector('#percent').innerHTML = `${bar} / 68`
+  document.querySelector('#file').value = `${bar}`
+}
+
+
+function assignClickEvent() {
+  for (let i = 1; i <= 68; i++) {
+    let divId = document.getElementById(`div${i}`)
+    divId.addEventListener('click', saveToLocal)
+  }
+}
+assignClickEvent()
+progressBar()
+
+
+

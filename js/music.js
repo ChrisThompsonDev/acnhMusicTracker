@@ -1,5 +1,48 @@
 //Create app that allows a user to keep track of songs collected in ACNH by storing checkboxes to local storage
 
+/// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK               
+
+function saveToLocal() {
+  if (this.style.background !== '') {
+    localStorage.removeItem(`music${this.id}`)
+    this.style.background = ''
+    this.style.color = 'black'
+  } else {
+    localStorage.setItem(`music${this.id}`, true)
+    this.style.background = '#8ee7b1'
+    this.style.color = '#025edb'
+  }
+  progressBar()
+}
+
+/////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD
+
+function checkLocalStorage() {
+  console.log(localStorage)
+  for(let i = 0; i <= 107; i++) {
+    if ( localStorage.getItem(`musicdiv${i}`) == 'true' ) {
+      document.getElementById(`div${i}`).style.background = '#8ee7b1'
+      document.getElementById(`div${i}`).style.color = '#025edb'
+    }
+  }
+}
+
+
+/////// UPDATE PROGRESS BAR
+
+function progressBar() {
+  let bar = 0
+  for (let i = 0; i <= 107; i++) {
+    if ( localStorage.getItem(`musicdiv${i}`) == 'true' ) {
+      bar += 1
+    }
+  }
+  console.log(bar)
+  document.querySelector('#percent').innerHTML = `${bar} / 107`
+  document.querySelector('#file').value = `${bar}`
+}
+
+
 
 ///////////// GET LIST OF SONGS FROM API AND LOAD INTO DOM /////////////
 /////////////         ADD CHECKBOX TO EACH SONG            /////////////
@@ -85,49 +128,9 @@ let songs = {}
       addMoreCheckboxes(107, "K.K. Robot Synth", "https://dodo.ac/np/images/thumb/8/8e/K.K._Robot_Synth_NH_Texture.png/256px-K.K._Robot_Synth_NH_Texture.png", "https://dodo.ac/np/images/b/bf/NH_K.K._Robot_Synth_%28Aircheck%2C_Hi-Fi%29.flac")
       
       checkLocalStorage()
+      progressBar()
     })
     
     }
   
   getMusic()
-
-
-/// Write function to check local storage, and change previous names from "checkbox" to "Music". This can be removed once all users have logged on at least once after this update.
-function convertLocalNames() {
-  for(let i = 0; i <= 107; i++) {
-    if ( localStorage.getItem(`checkbox${i}`) == 'true' ) {
-      localStorage.setItem(`musicdiv${i}`, true)
-      localStorage.removeItem(`checkbox${i}`)
-    }
-  }
-}
-convertLocalNames()
-
-
-/// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK               
-
-function saveToLocal() {
-  if (this.style.background !== '') {
-    localStorage.removeItem(`music${this.id}`)
-    this.style.background = ''
-    this.style.color = 'black'
-  } else {
-    localStorage.setItem(`music${this.id}`, true)
-    this.style.background = '#8ee7b1'
-    this.style.color = '#025edb'
-  }
-}
-
-/////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD
-
-function checkLocalStorage() {
-  console.log(localStorage)
-  for(let i = 0; i <= 107; i++) {
-    if ( localStorage.getItem(`musicdiv${i}`) == 'true' ) {
-      document.getElementById(`div${i}`).style.background = '#8ee7b1'
-      document.getElementById(`div${i}`).style.color = '#025edb'
-    }
-  }
-}
-
-checkLocalStorage()

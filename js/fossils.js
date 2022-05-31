@@ -1,5 +1,45 @@
 //Create app that allows a user to keep track of songs collected in ACNH by storing checkboxes to local storage
 
+/////////////// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK                
+
+function saveToLocal() {
+  if (this.style.background !== '') {
+    localStorage.removeItem(`fossil${this.id}`)
+    this.style.background = ''
+    this.style.color = 'black'
+  } else {
+    localStorage.setItem(`fossil${this.id}`, true)
+    this.style.background = '#8ee7b1'
+    this.style.color = '#025edb'
+  }
+  progressBar()
+}
+
+/////////////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD //
+
+function checkLocalStorage() {
+  console.log(localStorage)
+  for(let i = 0; i <= 73; i++) {
+    if ( localStorage.getItem(`fossildiv${i}`) == 'true' ) {
+      document.getElementById(`div${i}`).style.background = '#8ee7b1'
+      document.getElementById(`div${i}`).style.color = '#025edb'
+    }
+  }
+}
+
+/////// UPDATE PROGRESS BAR
+
+function progressBar() {
+  let bar = 0
+  for (let i = 0; i <= 73; i++) {
+    if ( localStorage.getItem(`fossildiv${i}`) == 'true' ) {
+      bar += 1
+    }
+  }
+  console.log(bar)
+  document.querySelector('#percent').innerHTML = `${bar} / 73`
+  document.querySelector('#file').value = `${bar}`
+}
 
 ///////////// GET LIST OF SONGS FROM API AND LOAD INTO DOM /////////////
 /////////////         ADD CHECKBOX TO EACH SONG            /////////////
@@ -51,63 +91,15 @@ let songs = {}
       })
             
       checkLocalStorage()
+      progressBar()
     })
     
     }
   
   getFossils()
   
-///////////////////////////////////////////////////////////////////////////////
-/////////////// STORE CHECKBOX STATUS TO LOCAL STORAGE ON CLICK ///////////////
-///////////////////////////////////////////////////////////////////////////////                
-
-
-
-/* function saveToLocal() {
-
-  if (this.checked) {
-    localStorage.setItem(`${this.id}`, true)
-  } else {
-    localStorage.removeItem(`${this.id}`)
-  }
-} */
-
-function saveToLocal() {
-  if (this.style.background !== '') {
-    localStorage.removeItem(`fossil${this.id}`)
-    this.style.background = ''
-    this.style.color = 'black'
-  } else {
-    localStorage.setItem(`fossil${this.id}`, true)
-    this.style.background = '#8ee7b1'
-    this.style.color = '#025edb'
-  }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-/////////////// CHECK CHECKBOX STATUS IN LOCAL STORAGE ON LOAD ////////////////
-/////////////////////////////////////////////////////////////////////////////// 
 
 
 
 
-/* function checkLocalStorage() {
-  console.log(localStorage)
-  for(let i = 0; i <= 107; i++) {
-    if ( localStorage.getItem(`fossilCheckbox${i}`) == 'true' ) {
-      document.getElementById(`fossilCheckbox${i}`).checked = true
-    }
-  }
-} */
 
-function checkLocalStorage() {
-  console.log(localStorage)
-  for(let i = 0; i <= 107; i++) {
-    if ( localStorage.getItem(`fossildiv${i}`) == 'true' ) {
-      document.getElementById(`div${i}`).style.background = '#8ee7b1'
-      document.getElementById(`div${i}`).style.color = '#025edb'
-    }
-  }
-}
-
-checkLocalStorage()
